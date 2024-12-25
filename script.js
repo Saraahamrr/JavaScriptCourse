@@ -1,6 +1,6 @@
+//////////////////////////////// LAB1 ///////////////////////////////////////
+
 // console.log("Hello Eng/menna this is Sarah Amr's Lab1");
-
-
 
 // // // // 1)  Write a JavaScript conditional statement
 // // // // to sort three numbers.
@@ -139,7 +139,9 @@
 // }
 
 
-///////// LAB2 //////////
+//////////////////////////////// LAB2 ///////////////////////////////////////
+
+console.log("Hello Eng/menna this is Sarah Amr's Lab2");
 
 // 1. Write a JavaScript program to sort the items of an array.
 // Sample array : var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
@@ -190,14 +192,14 @@ console.log(longest_word(y));
 
 function prime_num(num) {
     if (num < 1) {
-        return false;
+        return  "NUmber " + num + " is Not Accepted";
     }
 
     for ( var i  = 2  ; i <= Math.sqrt(num) ; i ++) {
         if (num % i === 0 )
-            return false;
+            return "NUmber " + num + " is Not Accepted";
     }
-    return true
+    return "NUmber " + num + " is Accepted";
 }
 console.log(prime_num(0));
 console.log(prime_num(1));
@@ -209,4 +211,19 @@ console.log(prime_num(23));
 // Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
 // Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
 // Output : 25, 10, 10
+
+
+
+function coinsneeded(amount , coins) { 
+     var sum_coins = [];
+
+     for ( var i = 0 ; i <= coins.length ; i++ ) { 
+        while (coins[i] <= amount) {
+            sum_coins.push(coins[i]);
+            amount -= coins[i];  
+        }
+     }  
+    return sum_coins;
+}
+console.log(coinsneeded(46, [25, 10, 5, 2, 1]));
 
