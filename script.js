@@ -155,7 +155,7 @@
 // }));
 
 // // 2. Write a JavaScript function that accepts
-// // a string as a parameter and 
+// // a string as a parameter and
 // // find the longest word within the string.
 // // Sample Data and output:
 // // Example string: 'Web Development Tutorial'
@@ -174,7 +174,7 @@
 //     for (let i = 0; i < string.length; i++) {
 //         if (string[i].length > longest_word.length) {
 //             longest_word = string[i]
-//         } 
+//         }
 //     }
 //         return longest_word
 // }
@@ -185,8 +185,8 @@
 // // 3. Write a JavaScript function that
 // // accepts a number as a parameter and--> done
 // // check the number is prime or not.
-// // Note : A prime number (or a prime) 
-// // is a natural number greater than 1 that has  ---> done 
+// // Note : A prime number (or a prime)
+// // is a natural number greater than 1 that has  ---> done
 // // no positive divisors other than 1 and itself. --> done
 
 
@@ -214,15 +214,15 @@
 
 
 
-// function coinsneeded(amount , coins) { 
+// function coinsneeded(amount , coins) {
 //      var sum_coins = [];
 
-//      for ( var i = 0 ; i <= coins.length ; i++ ) { 
+//      for ( var i = 0 ; i <= coins.length ; i++ ) {
 //         while (coins[i] <= amount) {
 //             sum_coins.push(coins[i]);
-//             amount -= coins[i];  
+//             amount -= coins[i];
 //         }
-//      }  
+//      }
 //     return sum_coins;
 // }
 // console.log(coinsneeded(46, [25, 10, 5, 2, 1]));
@@ -234,7 +234,7 @@ console.log("Hello Eng/menna this is Sarah Amr's Lab3");
 
 // // 1)  you are required to, given a string, replace every letter with its position in the alphabet
 // // If anything in the text isn't a letter, ignore it and don't return it."a" = 1, "b" = 2, etc.
-// // Example: alphabet_position("The sunset sets at twelve o' clock.") 
+// // Example: alphabet_position("The sunset sets at twelve o' clock.")
 // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
 
 
@@ -246,15 +246,15 @@ function alphabet_position(string) {
         .map (function (stringcode){
             return stringcode.charCodeAt(0) - 'a'.charCodeAt(0) + 1
         })
-        .join(" ")     
-    
+        .join(" ")
+
 }
 var alphabet = "The sunset sets at twelve o' clock.";
 console.log(alphabet_position(alphabet));
 
 
 // var alphabet = alphabet.toLocaleLowerCase();
-// // filter only characters .. cant use replace with arrays 
+// // filter only characters .. cant use replace with arrays
 // var aplphapet_filter = alphabet.replace(/[^a-zA-Z]/g,"");
 // // console.log(aplphapet_filter)
 // var alphabet_arr = aplphapet_filter.split("");
@@ -268,16 +268,16 @@ console.log(alphabet_position(alphabet));
 
 
 
-// // 2) Your task is to sort a given string. Each word in the string will contain a single number. 
+// // 2) Your task is to sort a given string. Each word in the string will contain a single number.
 // This number is the position the word should have in the result.
 // // Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
-// // If the input string is empty, return an empty string. 
+// // If the input string is empty, return an empty string.
 // // The words in the input String will only contain valid consecutive numbers.
 // // Examples
 // // "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
 // // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
 // // ""  -->  ""
-		
+
 x = "is2 Thi1s T4est 3a"
 y = "4of Fo1r pe6ople g3ood th5e the2"
 
@@ -319,15 +319,15 @@ console.log(y + " --> " + sortingStr_onNum(y));
 
 
 
-// // 3) Write a function called specialMultiply which accepts two parameters. 
+// // 3) Write a function called specialMultiply which accepts two parameters.
 // If the function is passed both parameters, it should return the product of the two.
 //  If the function is only passed one parameter -
 //  it should return a function which can later be passed another parameter to return the product.
 //  You will have to use closure and arguments to solve this.
 
 // // Examples:
-// // specialMultiply(3,4); // 12 
-// // specialMultiply(3)(4); // 12 
+// // specialMultiply(3,4); // 12
+// // specialMultiply(3)(4); // 12
 // // specialMultiply(3); // function(){}....
 
 
@@ -344,22 +344,70 @@ console.log(specialMultiply(3)(4));
 console.log(specialMultiply(3));
 
 
-// // 4) Write a function called guessingGame which takes in one parameter amount. The function should return another function that takes in a parameter called guess. In the outer function, you should create a variable called answer which is the result of a random number between 0 and 10 as well as a variable called guesses which should be set to 0.
+// // 4) Write a function called guessingGame which takes in one parameter amount.
+// The function should return another function that takes in a parameter called guess.
+// In the outer function, you should create a variable called answer
+// which is the result of a random number between 0 and 10 as well as a variable
+// called guesses which should be set to 0.
 
-// // In the inner function, if the guess passed in is the same as the random number (defined in the outer function) -
-//  you should return the string "You got it!". If the guess is too high return "Your guess is too high!" and if it is too low, 
-// return "Your guess is too low!". You should stop the user from guessing 
+// // In the inner function, if the guess passed in is the same as the random number
+// (defined in the outer function) -
+//  you should return the string "You got it!".
+//  If the guess is too high return "Your guess is too high!"
+// and if it is too low,return "Your guess is too low!".
+// You should stop the user from guessing
 // if the amount of guesses they have made is greater than the initial amount passed to the outer function.
 
 // // You will have to make use of closure to solve this problem.
-// // Examples (yours might not be like this, since the answer is random every time): 
-// // var game = guessingGame(5) 
-// // game(1) // "You're too low!" 
-// // game(8) // "You're too high!" 
-// // game(5) // "You're too low!" 
-// // game(7) // "You got it!" 
-// // var game2 = guessingGame(3) 
-// // game2(5) // "You're too low!" 
-// // game2(3) // "You're too low!" 
-// // game2(1) // "No more guesses the answer was 0" 
+// // Examples (yours might not be like this, since the answer is random every time):
+// // var game = guessingGame(5)
+// // game(1) // "You're too low!"
+// // game(8) // "You're too high!"
+// // game(5) // "You're too low!"
+// // game(7) // "You got it!"
+// // var game2 = guessingGame(3)
+// // game2(5) // "You're too low!"
+// // game2(3) // "You're too low!"
+// // game2(1) // "No more guesses the answer was 0"
 
+
+
+
+// var x = Math.floor(Math.random() * 10 + 1);  starts at 1 ends at 10
+// var y = Math.floor(Math.random() * 11);      starts at 0 ensd at 10
+
+function guessingGame (amount) {
+    var Answer = Math.floor(Math.random() * 11);
+    var guesses = 0 ;
+    return function guessing(guess) {
+        // if (guesses >= amount) {
+        //     console.log("No more guesses the answer was " + Answer )
+        // }
+        // guesses ++;
+
+        guesses++;
+
+        if (guesses >= amount) {
+            return console.log("No more guesses. The answer was " + Answer);
+        }
+            if(guess === Answer){
+                console.log("You got it!");
+            }
+            else if (guess > Answer){
+                console.log("You're too high!");
+            }
+            else if (guess < Answer){
+                console.log("You're too low!");
+            }
+    };
+}
+
+var game = guessingGame(5);
+game(1); // "You're too low!"
+game(8); // "You're too high!"
+game(5); // "You're too low!"
+game(7); // "You got it!"
+var game2 = guessingGame(3);
+game2(5); // "You're too low!"
+game2(3); // "You're too low!"
+game2(1); // "No more guesses the answer was 0"
