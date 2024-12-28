@@ -1,4 +1,6 @@
 //////////////////////////////////// Lab 4 ////////////////////////////////
+console.log("Hello Eng/menna this is Sarah Amr's Lab 4");
+
 
 // // 1- image slider while mouse on(auto sliding between imgs)
 // // - back to first img if exit the img 
@@ -53,12 +55,19 @@ xhr.onreadystatechange = function () {
 
     if (String(xhr.status).match(regOk)) {
       // console.log(JSON.parse(xhr.responseText));
-      data = JSON.parse(xhr.responseText);
-      console.log(JSON.stringify(data));
+     var data = JSON.parse(xhr.responseText);
+      //console.log(JSON.stringify(data));
+      const peopleList = document.getElementById("peopleList");
+      data.forEach(person => {
+      const option = document.createElement("option");
+      option.value = person.name;
+      option.textContent = person.name
+      peopleList.appendChild(option)
+      });
     } else if (String(xhr.status).match(regServerError)) {
-      console.error("server error:", xhr.responseText);
+      //console.error("server error:", xhr.responseText);
     } else if (String(xhr.status).match(regClientError)) {
-      console.error("client error:", xhr.responseText, xhr.statusText);
+      //console.error("client error:", xhr.responseText, xhr.statusText);
     }
   }
 };
